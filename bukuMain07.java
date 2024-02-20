@@ -16,6 +16,6 @@ public class bukuMain07 {
 
         buku07 book2 = new buku07("Self Reward", "Ihtiarilah Azkiya", 160, 29, 59000);
         book2.terjual(11);
-        book2.tampilInformasi();
+        book2.ta
     }
 }
