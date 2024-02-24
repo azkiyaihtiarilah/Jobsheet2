@@ -2,7 +2,7 @@ package jobsheet2;
 
 public class buku07 {
     String judul, pengarang;
-    int halaman, stock, harga;
+    int halaman, stock, harga, terjual;
 
     void tampilInformasi(){
         System.out.println("Judul: "+ judul);
@@ -27,6 +27,29 @@ public class buku07 {
 
     void gantiHarga(int hrg){
         harga -= hrg;
+    }
+
+    double hitungHargaTotal(double hargaTotal){
+        hargaTotal = terjual * harga;
+        return hargaTotal;
+    }
+
+    double hitungDiskon(double totalHarga){
+        if (totalHarga > 150000){
+            return 0.12;
+        } else if (totalHarga >= 75000 && totalHarga <= 150000){
+            return 0.05;
+        } else {
+            return 0;
+        }
+    }
+    
+    double hitungHargaBayar(double terjual){
+        double totalHarga = hitungHargaTotal(terjual);
+        double diskonHarga = hitungDiskon(totalHarga);
+        double totalDiskon = totalHarga * diskonHarga;
+        return totalHarga - totalDiskon; 
+
     }
 
     public buku07(){
